@@ -101,7 +101,6 @@ ENV HIVE_HOME /usr/local/hive
 ENV PATH $PATH:$HIVE_HOME/bin
 
 # startup
-ADD bootstrap.sh /etc/bootstrap.sh
 CMD ["/etc/bootstrap.sh", "-d"]
 
 # mysql port
