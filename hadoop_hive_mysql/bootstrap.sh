@@ -17,6 +17,7 @@ service sshd start
 $HADOOP_PREFIX/sbin/start-dfs.sh
 $HADOOP_PREFIX/sbin/start-yarn.sh
 hive --service metastore &
+hive --service hiveserver2 &
 
 if [[ $1 == "-d" ]]; then
   while true; do sleep 1000; done

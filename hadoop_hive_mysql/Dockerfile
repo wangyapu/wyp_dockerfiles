@@ -95,6 +95,9 @@ RUN /etc/init.d/mysqld start \
 RUN curl -LO http://mirrors.hust.edu.cn/apache/hive/hive-1.2.1/apache-hive-1.2.1-bin.tar.gz | tar -xz -C /tmp/hive
 RUN cp -r /tmp/hive /usr/local/hive
 RUN mkdir -p /tmp/hive/iotmp
+
+# change javax.jdo.option.ConnectionURL, javax.jdo.option.ConnectionDriverName, javax.jdo.option.ConnectionPassword
+# change hive.exec.local.scratchdir, hive.downloaded.resources.dir, hive.querylog.location
 ADD hive-site.xml /usr/local/hive/
 ADD cp mysql-connector-java-5.1.17-bin.jar /usr/local/hive/lib/
 ENV HIVE_HOME /usr/local/hive
